@@ -77,3 +77,384 @@ header {
 
 
 
+
+
+
+
+
+
+
+
+
+
+                                            
+/* 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+*/
+
+
+
+                                            /* SignUP page Style  */
+
+
+
+#signup{
+    background-color: #1e1e22;
+    font-family: 'Roboto',sans-serif;
+}
+
+
+.signupbox {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupinputs {
+height: 650px;
+width: 500px;
+background-color: #1e292e;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+border-radius: 4px;
+}
+                
+.heading {
+    text-align: center;
+}
+
+
+.heading h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.heading img{
+    width: 80px;
+    padding-bottom: 20px;
+}
+
+.nameinput  {
+    text-align: center;
+        
+  }
+ 
+  .nameinput label{
+ float: left;
+ padding-left: 50px;
+ color: grey;
+ text-transform: uppercase;
+ font-size: 12px;
+ font-weight: bold;
+ 
+  }
+ .nameinput input {
+ width: 80%;
+ border: none;
+ line-height:40px ;
+ background-color: transparent;
+ border-bottom: 2px solid rgb(9, 176, 176);
+ border-radius: 2px;
+ outline: none;
+ color: white;
+ text-align: center;
+ transition: 0.5s;
+ 
+ }
+ 
+
+.nameinput input:active {
+    border-bottom:2px solid rgb(1, 45, 45);
+    }
+
+
+
+.emailinput  {
+   text-align: center;
+       
+ }
+
+ .emailinput label{
+float: left;
+padding-left: 50px;
+color: grey;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: bold;
+
+ }
+.emailinput input {
+width: 80%;
+border: none;
+line-height:40px ;
+background-color: transparent;
+border-bottom: 2px solid rgb(9, 176, 176);
+border-radius: 2px;
+outline: none;
+color: white;
+text-align: center;
+transition: 0.5s;
+
+}
+
+
+.emailinput input:active {
+    border-bottom:2px solid rgb(1, 45, 45);
+    }
+    
+
+.passwordinput{
+text-align: center;
+}
+
+.passwordinput label {
+    float: left;
+padding-left: 50px;
+color: grey;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: bold;
+}
+
+.passwordinput input {
+width: 80%;
+line-height:40px ;
+border: none;
+background-color: transparent;
+border-bottom: 2px solid rgb(9, 176, 176);
+border-radius: 2px;
+outline: none;
+color: white;
+transition: 0.5s;
+text-align: center;
+   
+}
+
+
+.passwordinput input:active {
+border-bottom:2px solid rgb(1, 45, 45);
+}
+
+
+.buttoninput {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.buttoninput button{
+    padding: 7px 14px;
+    background-color: transparent !important;
+    border: 1px solid rgb(9, 176, 176);
+    color: rgb(9, 176, 176);
+    font-weight: bold;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+.buttoninput button:hover {
+
+    background-color: rgb(9, 176, 176) !important; 
+    color: white;
+}
+
+.buttoninput button:active {
+   transform: translateY(-5px);
+}
+
+
+
+
+.emailinput2 {
+    padding-top: 20px;
+}
+.nameinput2 {
+    padding-top: 20px;
+}
+.passwordinput2 {
+    padding-top: 20px;
+}
+.buttoninput2{
+    padding-top: 20px;
+}
+
+.emailinput2 input{
+    text-align: left !important;
+}
+.nameinput2 input{
+   text-align: left !important;
+}
+.passwordinput2 input{
+   text-align: left !important;
+}
+
+
+
+
+
+
+
+
+
+/* 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+*/
+
+
+
+                                            /* LOGIN page Style  */
+
+
+
+#login{
+    background-color: #1e1e22;
+    font-family: 'Roboto',sans-serif;
+}
+
+
+.loginbox {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.logininputs {
+height: 500px;
+width: 500px;
+background-color: #1e292e;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+border-radius: 4px;
+
+}
+
+
+.heading {
+    text-align: center;
+}
+
+
+.heading h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.heading img{
+    width: 80px;
+    padding-bottom: 20px;
+}
+.emailinput  {
+   text-align: center;
+       
+ }
+
+ .emailinput label{
+float: left;
+padding-left: 50px;
+color: grey;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: bold;
+
+ }
+.emailinput input {
+width: 80%;
+border: none;
+line-height:40px ;
+background-color: transparent;
+border-bottom: 2px solid rgb(9, 176, 176);
+border-radius: 2px;
+outline: none;
+color: white;
+text-align: center;
+transition: 0.5s;
+
+}
+
+
+.emailinput input:active {
+    border-bottom:2px solid rgb(1, 45, 45);
+    }
+    
+
+.passwordinput{
+text-align: center;
+}
+
+.passwordinput label {
+    float: left;
+padding-left: 50px;
+color: grey;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: bold;
+}
+
+.passwordinput input {
+width: 80%;
+line-height:40px ;
+border: none;
+background-color: transparent;
+border-bottom: 2px solid rgb(9, 176, 176);
+border-radius: 2px;
+outline: none;
+color: white;
+transition: 0.5s;
+text-align: center;
+   
+}
+
+
+.passwordinput input:active {
+border-bottom:2px solid rgb(1, 45, 45);
+}
+
+
+.buttoninput {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.buttoninput button{
+    padding: 7px 14px;
+    background-color: transparent !important;
+    border: 1px solid rgb(9, 176, 176);
+    color: rgb(9, 176, 176);
+    font-weight: bold;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+.buttoninput button:hover {
+
+    background-color: rgb(9, 176, 176) !important; 
+    color: white;
+}
+
+.buttoninput button:active {
+   transform: translateY(-5px);
+}
+    

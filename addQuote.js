@@ -28,6 +28,6 @@ document.getElementById("addnew").addEventListener("click",function(){
     })
     .then(function(data){
         console.log("The quote is added",data);
-        alert("Vas citat je uspeno dodat")
+        alert("Vas citat je uspeno dodat");
     })
-})
+});
