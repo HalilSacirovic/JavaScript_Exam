@@ -127,9 +127,56 @@ background-color: #1e292e;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-border-radius: 4px;
+border-radius: 8px;
+position: relative;
+overflow: hidden;
 }
-                
+    
+    
+    .signupinputs::before{
+        content: "";
+        position:absolute;
+        top: -35%;
+        left: -50%;
+        width: 500px;
+        height: 550px;
+        background:linear-gradient(0deg , transparent ,#45f3ff,#45f3ff);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+    }
+    
+    .signupinputs:after{
+        content: "";
+        position:absolute;
+        top: -35%;
+        left: -50%;
+        width: 500px;
+        height: 550px;
+        background:linear-gradient(0deg , transparent ,#45f3ff,#45f3ff);
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite;
+        animation-delay: -3s;
+    }
+
+    @keyframes animate {
+        0%{
+            transform: rotate(0deg);
+    
+        }
+    
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    
+    
+
+
+
+
+
+
+
 .heading {
     text-align: center;
 }
@@ -163,7 +210,7 @@ border-radius: 4px;
  .nameinput input {
  width: 80%;
  border: none;
- line-height:40px ;
+ line-height:14px ;
  background-color: transparent;
  border-bottom: 2px solid rgb(9, 176, 176);
  border-radius: 2px;
@@ -177,9 +224,12 @@ border-radius: 4px;
 
 .nameinput input:active {
     border-bottom:2px solid rgb(1, 45, 45);
-    }
+ }
 
-
+.nameinput input:focus {
+    line-height: 30px;
+    background-color: #4cd1da;
+}
 
 .emailinput  {
    text-align: center;
@@ -337,22 +387,72 @@ border-bottom:2px solid rgb(1, 45, 45);
   display: flex;
  justify-content: center;
  align-items: center;
+
 }
 
-.logininputs {
+.logininputs1 {
 height: 500px;
 width: 500px;
 background-color: #1e292e;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-border-radius: 4px;
+border-radius: 8px;
+position: relative;
+overflow: hidden;
 
 }
+
+.logininputs1::before{
+    content: "";
+    position:absolute;
+    top: -50%;
+    left: -50%;
+    width: 550px;
+    height: 455px;
+    background:linear-gradient(0deg , transparent ,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.logininputs1:after{
+    content: "";
+    position:absolute;
+    top: -50%;
+    left: -50%;
+    width: 550px;
+    height: 455px;
+    background:linear-gradient(0deg , transparent ,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.logininputs{
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background-color: #1e292e;
+    z-index: 10;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 
 
 .heading {
     text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -383,7 +483,7 @@ font-weight: bold;
 .emailinput input {
 width: 80%;
 border: none;
-line-height:40px ;
+line-height:14px ;
 background-color: transparent;
 border-bottom: 2px solid rgb(9, 176, 176);
 border-radius: 2px;
@@ -391,14 +491,20 @@ outline: none;
 color: white;
 text-align: center;
 transition: 0.5s;
+overflow: hidden;
 
 }
 
 
 .emailinput input:active {
     border-bottom:2px solid rgb(1, 45, 45);
-    }
-    
+}
+
+.emailinput input:focus{
+
+        line-height: 30px;
+        background-color: #45f3ff;
+ }
 
 .passwordinput{
 text-align: center;
@@ -411,11 +517,12 @@ color: grey;
 text-transform: uppercase;
 font-size: 12px;
 font-weight: bold;
+padding-top: 20px;
 }
 
 .passwordinput input {
 width: 80%;
-line-height:40px ;
+line-height:14px ;
 border: none;
 background-color: transparent;
 border-bottom: 2px solid rgb(9, 176, 176);
@@ -424,18 +531,25 @@ outline: none;
 color: white;
 transition: 0.5s;
 text-align: center;
+transition: 0.4s;
    
 }
 
+.passwordinput input:focus{
+    line-height: 30px;
+    background-color: #45f3ff;
+}
 
 .passwordinput input:active {
 border-bottom:2px solid rgb(1, 45, 45);
+background-color: transparent;
 }
 
 
 .buttoninput {
     text-align: right;
     padding-right: 50px;
+    padding-top: 30px;
 }
 
 .buttoninput button{
@@ -454,7 +568,11 @@ border-bottom:2px solid rgb(1, 45, 45);
     color: white;
 }
 
-.buttoninput button:active {
-   transform: translateY(-5px);
+
+.buttoninput button:hover
+{
+transform: translateY(-5px);
 }
-    
+.buttoninput button:active {
+   transform: translateY(2px);
+}
