@@ -7,6 +7,7 @@ document.getElementById("login").addEventListener("click", function () {
       password: password,
     };
   
+  
     fetch("https://js-course-server.onrender.com/user/login", {
       method: "POST",
       body: JSON.stringify(loginData),
@@ -24,7 +25,9 @@ document.getElementById("login").addEventListener("click", function () {
           alert("Prijava uspesna!");
           window.location.href = "index.html";
         } else {
-        //   alert("Neuspesno");
+          alert("Neuspesno");
         }
       });
   });
+
+

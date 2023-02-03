@@ -1,7 +1,7 @@
 var quotes = [];
 var allQuotes = [];
 
-function renderQuotes() {
+const renderQuotes = () => {
   var parentEl = document.getElementById("listparent");
   parentEl.innerHTML = "";
   quotes.forEach(function (item, index) {
@@ -12,21 +12,20 @@ function renderQuotes() {
 }
 
 fetch("https://js-course-server.onrender.com/quotes/get-all-quotes")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
+  .then((response) => response.json())
+  
+  .then((data)=> {
     quotes = data;
     allQuotes = data;
     renderQuotes();
   })
-  .catch(function (err) {
+  .catch((err)=> {
     console.log("err", err);
   });
 
-document.getElementById("search").addEventListener("keydown", function () {
+document.getElementById("search").addEventListener("keydown", ()=> {
   var searchValue = document.getElementById("search").value;
-  quotes = allQuotes.filter(function (item, index) {
+  quotes = allQuotes.filter((item, index) => {
     if (item.quoteText) {
       return item.quoteText.toLowerCase().includes(searchValue.toLowerCase());
     } else {
