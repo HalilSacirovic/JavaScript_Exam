@@ -6,6 +6,15 @@ document.getElementById("login").addEventListener("click", function () {
       email: email,
       password: password,
     };
+
+
+    if(!email.includes("@") || password.length<6 || password.length>20)
+    {
+      alert("Email ili Sifra nisu u dobrom formatu");
+
+    }
+
+    
   
   
     fetch("https://js-course-server.onrender.com/user/login", {
@@ -25,7 +34,7 @@ document.getElementById("login").addEventListener("click", function () {
           alert("Prijava uspesna!");
           window.location.href = "index.html";
         } else {
-          alert("Neuspesno");
+          // alert("Neuspesno");
         }
       });
   });
