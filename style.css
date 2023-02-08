@@ -635,8 +635,9 @@ transform: translateY(-5px);
 }
 
 .alertbox h2 {
-font-size: 23px;
+font-size: 20px;
 padding-left: 10px;
+font-family: 'Times New Roman', Times, serif;
 }
 
 .errormessage{
