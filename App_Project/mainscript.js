@@ -38,16 +38,17 @@ let indexpitanja = 0;
 let bodovi = 0;
 
 function getNewQuestion() {
+
+
   itemquestion.innerHTML = "";
   answeritem.innerHTML= "";
 
-
+  // If there are still questions left, display the next question
   if (indexpitanja >= item.length) {
-  
-    window.location.href = "kraj.html";
+    // Redirect to the end page with a query parameter to indicate the test has ended
+    window.location.href = "kraj.html?bodovi=" + bodovi;
     return;
   }
-
   selectedQuestion = item[indexpitanja];
   var showquestion = document.createElement("h3");
   showquestion.innerHTML = item[indexpitanja].question;
@@ -55,11 +56,13 @@ function getNewQuestion() {
 
 
   for (var i = 0; i < 3; i++) {
+    let nesto =  selectedQuestion.answer[i]
+
     var testitem = document.createElement("button");
     testitem.textContent = selectedQuestion.answer[i];
     testitem.onclick = () => submitAnswer(
       selectedQuestion.id,
-      selectedQuestion.correct,
+      nesto,
     );
     answeritem.appendChild(testitem);
   }
@@ -80,6 +83,7 @@ function submitAnswer(id, ans) {
     if (selectedQuestion.correct === ans) {
       // bodovi += selectedQuestion.points;
       bodovi+=selectedQuestion.points;
+
     }
     indexpitanja++;
     console.log(bodovi)
@@ -99,10 +103,3 @@ function submitAnswer(id, ans) {
 
 
  // Define variable for storing score
-
-var bodoviDiv = document.getElementById("bodovi");
-var divChild = document.createElement("a");
-
-divChild.innerHTML = "Nesto";
-
-bodoviDiv.appendChild(divChild);
