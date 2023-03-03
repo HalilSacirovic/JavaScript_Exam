@@ -11,21 +11,21 @@ const item = [
     question: "Glavni Grad Tutina ",
     answer: ["Ribarice", "Tutin je Grad", "Ne znam"],
     correct: "Tutin je Grad",
-    points: 5,
+    points: 8,
   },
   {
     id: "3",
     question: "Koliko je sati",
     answer: ["Kolko ti treba", "Jos malo pa sace", "Isto ko juce"],
     correct: "Jos malo pa sace",
-    points: 5,
+    points: 4,
   },
   {
     id: "4",
     question: "Ne znam ni ja sam",
     answer: ["Isto", "Takode", "Ne znam"],
     correct: "Ne znam",
-    points: 5,
+    points: 3,
   },
 ];
 
@@ -39,7 +39,7 @@ let bodovi = 0;
 
 function getNewQuestion() {
   itemquestion.innerHTML = "";
-  answeritem.innerHTML = "";
+  answeritem.innerHTML= "";
 
 
   if (indexpitanja >= item.length) {
@@ -53,36 +53,38 @@ function getNewQuestion() {
   showquestion.innerHTML = item[indexpitanja].question;
   itemquestion.appendChild(showquestion);
 
+
   for (var i = 0; i < 3; i++) {
     var testitem = document.createElement("button");
-    testitem.textContent = item[indexpitanja].answer[i];
+    testitem.textContent = selectedQuestion.answer[i];
     testitem.onclick = () => submitAnswer(
       selectedQuestion.id,
-      item[indexpitanja].answer[i]
+      selectedQuestion.correct,
     );
     answeritem.appendChild(testitem);
-    console.log(selectedQuestion);
   }
   
 }
 
-function startTest() {
+function startTest(){
   getNewQuestion();
 }
 
 startTest();
 
-console.log(selectedQuestion.correct, selectedQuestion.points);
+
 
 function submitAnswer(id, ans) {
+  console.log(ans)
   if (selectedQuestion.id === id) {
     if (selectedQuestion.correct === ans) {
-      console.log(selectedQuestion.points);
-      bodovi += selectedQuestion.points;
-      console.log("Nesto nebitno");
+      // bodovi += selectedQuestion.points;
+      bodovi+=selectedQuestion.points;
     }
     indexpitanja++;
+    console.log(bodovi)
   }
+  console.log(id,ans)
   getNewQuestion();
 }
 
@@ -90,3 +92,17 @@ function submitAnswer(id, ans) {
 // const ans = document.getElementById("#").textContent;
 // submitAnswer(selectedQuestion,ans);
 // })
+
+
+
+// /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ // Define variable for storing score
+
+var bodoviDiv = document.getElementById("bodovi");
+var divChild = document.createElement("a");
+
+divChild.innerHTML = "Nesto";
+
+bodoviDiv.appendChild(divChild);
