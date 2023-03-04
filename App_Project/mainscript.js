@@ -92,6 +92,8 @@ function submitAnswer(id, ans) {
   getNewQuestion();
 }
 
+
+
 // document.getElementById("#").addEventListener("click",() => {
 // const ans = document.getElementById("#").textContent;
 // submitAnswer(selectedQuestion,ans);
