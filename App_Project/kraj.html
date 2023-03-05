@@ -36,6 +36,7 @@
     
      var bodoviDiv = document.getElementById("bodovi");
     var divChild = document.createElement("h2");
+    var megaIndex =0;
 
 
     divChild.innerHTML = poeni;
@@ -59,12 +60,18 @@
 
 
 document.getElementById("startagain").addEventListener("click", () => {
+  let urlParams = new URLSearchParams(window.location.search);
+  let megaIndex = parseInt(urlParams.get("megaIndex"));
   
-    
-    window.location.href = 'pitanje.html'
-
-return
+  if (isNaN(megaIndex)) {
+    megaIndex = 0;
+  } else {
+    megaIndex++;
+  }
+  
+  window.location.href = 'pitanje.html?megaIndex=' + megaIndex;
 });
+
 </script>
 
 

@@ -159,8 +159,6 @@ var answeritem = document.getElementById("1");
 let selectedQuestion;
 let megaSelectedQuestion;
 let indexpitanja = 0;
-let megaIndex = 0;
-
 let bodovi = 0;
 
 let megaItem;
@@ -168,6 +166,10 @@ let megaItem;
 
 
 function getNewQuestion() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const megaIndex = urlParams.get("megaIndex");
+
+  console.log(megaIndex)
 
   megaItem = megaArray[megaIndex];
 
@@ -220,6 +222,5 @@ function submitAnswer(id, ans) {
   
   getNewQuestion();
 }
-
 
 
