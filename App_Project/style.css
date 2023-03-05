@@ -356,3 +356,34 @@ transform: translateY(-4px);
     font-size: 19px;
 }
 
+
+
+#startagain {
+
+    padding: 5px 20px;
+    background-color: #ddd7f0;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.4s linear;
+}
+
+#startagain:hover {
+transform: translateY(-4px);
+}
+
+#startagain:active{
+    transform: translateY(-2px);
+}
+
+.startagain button{
+    display: block;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: whitesmoke;
+    font-weight: 600;
+    font-size: 19px;
+}
+
