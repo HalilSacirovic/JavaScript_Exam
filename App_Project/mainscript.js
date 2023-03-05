@@ -3,7 +3,7 @@ const megaArray = [
     {
       id: "1",
       question: "Dobro si?",
-      answer: ["Elhamdulillah", "Dobro sam", "Very GUT"],
+      answer: ["Elhamdulillah", "Dobro sam", "Very GUT","Very GUT"],
       correct: "Elhamdulillah",
       points: 5,
     },
@@ -159,15 +159,18 @@ var answeritem = document.getElementById("1");
 let selectedQuestion;
 let megaSelectedQuestion;
 let indexpitanja = 0;
-let megaIndex=0;
+let megaIndex = 0;
+
 let bodovi = 0;
 
 let megaItem;
 
 
+
 function getNewQuestion() {
-  
+
   megaItem = megaArray[megaIndex];
+
   
   itemquestion.innerHTML = "";
   answeritem.innerHTML= "";
@@ -180,11 +183,11 @@ function getNewQuestion() {
   }
   selectedQuestion = megaItem[indexpitanja];
   var showquestion = document.createElement("h3");
-  showquestion.innerHTML = megaItem[indexpitanja].question;
+  showquestion.innerHTML = selectedQuestion.question;
   itemquestion.appendChild(showquestion);
 
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < selectedQuestion.answer.length; i++) {
     let nesto =  selectedQuestion.answer[i]
 
     var testitem = document.createElement("button");
@@ -220,14 +223,3 @@ function submitAnswer(id, ans) {
 
 
 
-// document.getElementById("#").addEventListener("click",() => {
-// const ans = document.getElementById("#").textContent;
-// submitAnswer(selectedQuestion,ans);
-// })
-
-
-
-// /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
- // Define variable for storing score
