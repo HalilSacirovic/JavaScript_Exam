@@ -1,6 +1,5 @@
-
 const megaArray = [
-  item = [
+[
     {
       id: "1",
       question: "Dobro si?",
@@ -31,7 +30,7 @@ const megaArray = [
     },
   ],
 
- item = [
+ [
     {
       id: "5",
       question: "Ko je napisao na Drini Cuprija",
@@ -60,6 +59,96 @@ const megaArray = [
       correct: "1h",
       points: 3,
     },
+  ],
+  [
+    {
+      id: "9",
+      question: "Koji je glavni grad države:Francuske",
+      answer: ["Pariz", "Kopenhagen", "Ne znam"],
+      correct: "Pariz",
+      points: 5,
+    },
+    {
+      id: "10",
+      question: "Koji je glavni grad države:Nemacke",
+      answer: ["Novi Pazar", "Berlin", "Tutin"],
+      correct: "Berlin",
+      points: 8,
+    },
+    {
+      id: "11",
+      question: "Koji je glavni grad države:SAD",
+      answer: ["Washingthon DC", "New York", "Ribarice"],
+      correct: "Washingthon DC",
+      points: 4,
+    },
+    {
+      id: "12",
+      question: "Koji je glavni grad države:Austrije",
+      answer: ["Bec", "Beograd", "Keln"],
+      correct: "Bec",
+      points: 3,
+    },
+  ],
+  [
+    {
+      id: "13",
+      question: "Koji je glavni grad države:Irske",
+      answer: ["Dublin", "Ne znam", "Kraljevo"],
+      correct: "Dublin",
+      points: 5,
+    },
+    {
+      id: "14",
+      question: "Koji je glavni grad države:Italije",
+      answer: ["Rim", "Helsinki", "Raska"],
+      correct: "Rim",
+      points: 8,
+    },
+    {
+      id: "15",
+      question: "Koji je glavni grad države:Grcke",
+      answer: ["Atina", "Krusevac", "Ljig"],
+      correct: "Atina",
+      points: 4,
+    },
+    {
+      id: "16",
+      question: "Koji je glavni grad države:Turske",
+      answer: ["Istambul", "Ne znam", "Ankara"],
+      correct: "Ankara",
+      points: 3,
+    },
+  ],
+  [
+    {
+      id: "5",
+      question: "Koji je glavni grad države:",
+      answer: ["P", "Nisam", "Ne znam"],
+      correct: "P",
+      points: 5,
+    },
+    {
+      id: "6",
+      question: "Koji je glavni grad države:",
+      answer: ["Novi Pazar", "Otava", "Sjenica"],
+      correct: "Otava",
+      points: 8,
+    },
+    {
+      id: "7",
+      question: "Koliko dan ima minuta",
+      answer: ["1440", "2569", "69125"],
+      correct: "1440",
+      points: 4,
+    },
+    {
+      id: "8",
+      question: "Za koliko ces preci 100 km ako se kreces 100km/h",
+      answer: ["2h", "30min", "1h"],
+      correct: "1h",
+      points: 3,
+    },
   ]
 ]
 
@@ -70,23 +159,28 @@ var answeritem = document.getElementById("1");
 let selectedQuestion;
 let megaSelectedQuestion;
 let indexpitanja = 0;
+let megaIndex=0;
 let bodovi = 0;
 
+let megaItem;
+
+
 function getNewQuestion() {
-
-
+  
+  megaItem = megaArray[megaIndex];
+  
   itemquestion.innerHTML = "";
   answeritem.innerHTML= "";
 
-  // If there are still questions left, display the next question
-  if (indexpitanja >= item.length) {
-    // Redirect to the end page with a query parameter to indicate the test has ended
+  if (indexpitanja >= megaItem.length) {
+  
+
     window.location.href = "kraj.html?bodovi=" + bodovi;
-    return;
+    return ;
   }
-  selectedQuestion = item[indexpitanja];
+  selectedQuestion = megaItem[indexpitanja];
   var showquestion = document.createElement("h3");
-  showquestion.innerHTML = item[indexpitanja].question;
+  showquestion.innerHTML = megaItem[indexpitanja].question;
   itemquestion.appendChild(showquestion);
 
 
@@ -111,19 +205,16 @@ function startTest(){
 startTest();
 
 
-
 function submitAnswer(id, ans) {
-  console.log(ans)
   if (selectedQuestion.id === id) {
     if (selectedQuestion.correct === ans) {
       // bodovi += selectedQuestion.points;
       bodovi+=selectedQuestion.points;
-
     }
     indexpitanja++;
-    console.log(bodovi)
+
   }
-  console.log(id,ans)
+  
   getNewQuestion();
 }
 
