@@ -1,3 +1,5 @@
+let  megaIndex = 0
+
 function activeSpinenr(){
  
     document.getElementById("loading").style = "display: flex; height:100vh; justify-content: center; align-items:center;"
@@ -28,10 +30,9 @@ document.getElementById("loginbutton").addEventListener("click", function () {
   //   alert("Email ili Sifra nisu u dobrom formatu");
 
   // }
-
-
   
-activeSpinenr();
+  
+  activeSpinenr();
 
   fetch("https://js-course-server.onrender.com/user/login", {
     method: "POST",
@@ -44,11 +45,13 @@ activeSpinenr();
       return response.json();
     })
     .then(function (data) {
+      const urlParams = new URLSearchParams(window.location.search);
       if (data.userId) {
+        let megaIndex = urlParams.get("megaIndex");
         localStorage.setItem("auth_token", data.token);
         localStorage.setItem("userId", data.userId);
         alert("Prijava uspesna!");
-        window.location.href = "pitanje.html";
+        window.location.href = "pitanje.html?megaIndex=0";
       } else {
         deactivateSpinenr()
       }

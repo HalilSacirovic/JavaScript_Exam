@@ -1,9 +1,9 @@
 const megaArray = [
-[
+  [
     {
       id: "1",
       question: "Dobro si?",
-      answer: ["Elhamdulillah", "Dobro sam", "Very GUT","Very GUT"],
+      answer: ["Elhamdulillah", "Dobro sam", "Very GUT", "Very GUT"],
       correct: "Elhamdulillah",
       points: 5,
     },
@@ -30,7 +30,7 @@ const megaArray = [
     },
   ],
 
- [
+  [
     {
       id: "5",
       question: "Ko je napisao na Drini Cuprija",
@@ -122,35 +122,35 @@ const megaArray = [
   ],
   [
     {
-      id: "5",
+      id: "18",
       question: "Koji je glavni grad države:",
       answer: ["P", "Nisam", "Ne znam"],
       correct: "P",
       points: 5,
     },
     {
-      id: "6",
+      id: "18",
       question: "Koji je glavni grad države:",
       answer: ["Novi Pazar", "Otava", "Sjenica"],
       correct: "Otava",
       points: 8,
     },
     {
-      id: "7",
+      id: "19",
       question: "Koliko dan ima minuta",
       answer: ["1440", "2569", "69125"],
       correct: "1440",
       points: 4,
     },
     {
-      id: "8",
+      id: "20",
       question: "Za koliko ces preci 100 km ako se kreces 100km/h",
       answer: ["2h", "30min", "1h"],
       correct: "1h",
       points: 3,
     },
-  ]
-]
+  ],
+];
 
 var placeForAnswers = document.getElementById("answers");
 var itemquestion = document.getElementById("question");
@@ -160,67 +160,61 @@ let selectedQuestion;
 let megaSelectedQuestion;
 let indexpitanja = 0;
 let bodovi = 0;
-
 let megaItem;
+const urlParams = new URLSearchParams(window.location.search);
+let megaIndex = urlParams.get("megaIndex");
 
+let duzinaNiza = megaArray.length;
+console.log(megaIndex);
 
+if (megaIndex < 10) console.log('ima')
 
 function getNewQuestion() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const megaIndex = urlParams.get("megaIndex");
-
-  console.log(megaIndex)
-
+  console.log(duzinaNiza,'duzina')
   megaItem = megaArray[megaIndex];
 
-  
   itemquestion.innerHTML = "";
-  answeritem.innerHTML= "";
+  answeritem.innerHTML = "";
 
   if (indexpitanja >= megaItem.length) {
-  
+    if (megaIndex === 5) {
+      window.location.href = `kraj.html?bodovi=${bodovi}&megaIndex=0`;
+      console.log('prvi')
 
-    window.location.href = "kraj.html?bodovi=" + bodovi;
-    return ;
+    }
+    window.location.href = `kraj.html?bodovi=${bodovi}&megaIndex=${Number(megaIndex) + 1}`;
+
+    return;
   }
   selectedQuestion = megaItem[indexpitanja];
   var showquestion = document.createElement("h3");
   showquestion.innerHTML = selectedQuestion.question;
   itemquestion.appendChild(showquestion);
 
-
   for (var i = 0; i < selectedQuestion.answer.length; i++) {
-    let nesto =  selectedQuestion.answer[i]
+    let nesto = selectedQuestion.answer[i];
 
     var testitem = document.createElement("button");
     testitem.textContent = selectedQuestion.answer[i];
-    testitem.onclick = () => submitAnswer(
-      selectedQuestion.id,
-      nesto,
-    );
+    testitem.onclick = () => submitAnswer(selectedQuestion.id, nesto);
     answeritem.appendChild(testitem);
   }
-  
 }
 
-function startTest(){
+function startTest() {
   getNewQuestion();
 }
 
 startTest();
 
-
 function submitAnswer(id, ans) {
   if (selectedQuestion.id === id) {
     if (selectedQuestion.correct === ans) {
       // bodovi += selectedQuestion.points;
-      bodovi+=selectedQuestion.points;
+      bodovi += selectedQuestion.points;
     }
     indexpitanja++;
-
   }
-  
+
   getNewQuestion();
 }
-
-
