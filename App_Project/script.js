@@ -14,6 +14,7 @@ function deactivateSpinenr(){
 
 
 
+alertbox = document.getElementById("alertbox");
 document.getElementById("loading").style = "display: none;"
 document.getElementById("loginbutton").addEventListener("click", function () {
   var username = document.getElementById("username").value;
@@ -30,6 +31,21 @@ document.getElementById("loginbutton").addEventListener("click", function () {
   //   alert("Email ili Sifra nisu u dobrom formatu");
 
   // }
+  
+  
+  if(!username.includes("@") || password.length<6 || password.length>20)
+  {
+   alertbox=  setTimeout(function(){
+      document.getElementById("alertbox").style = "display:block";
+    },100)
+  }
+
+  alertbox = setTimeout(function(){
+    document.getElementById("alertbox").style = "display:none";
+  },3000)
+ 
+
+  
   
   
   activeSpinenr();

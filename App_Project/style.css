@@ -387,3 +387,55 @@ transform: translateY(-4px);
     font-size: 19px;
 }
 
+
+
+#alertbox {
+    
+    background-color:#f6a7a3;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 3%;
+    left: 38%;
+    border-left: 4px solid rgb(101, 3, 3);
+    border-radius: 4px;
+
+    animation: animatee 1.4s linear;
+    z-index: 999;
+    display: none;
+}
+
+
+@keyframes animatee {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0.1;
+    }
+
+
+    60% {
+        opacity: 0.4;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+    
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.alertbox h2 {
+font-size: 20px;
+padding-left: 10px;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.errormessage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
