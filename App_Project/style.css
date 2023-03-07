@@ -133,7 +133,7 @@ overflow: hidden;
     left: -50%;
     width: 550px;
     height: 455px;
-    background:linear-gradient(0deg , transparent ,#b1b0b0,#dbdbdb);
+    background:linear-gradient(0deg , transparent ,#b571a1,#b571a1);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -145,7 +145,7 @@ overflow: hidden;
     left: -50%;
     width: 550px;
     height: 455px;
-    background:linear-gradient(0deg , transparent ,#dbdbdb,#dbdbdb);
+    background:linear-gradient(0deg , transparent ,#b571a1,#b571a1);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;

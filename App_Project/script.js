@@ -13,7 +13,9 @@ function deactivateSpinenr(){
 }
 
 
+var labelalert = document.getElementById("labelalert");
 
+labelalert.style="display:none"
 alertbox = document.getElementById("alertbox");
 document.getElementById("loading").style = "display: none;"
 document.getElementById("loginbutton").addEventListener("click", function () {
@@ -25,7 +27,7 @@ document.getElementById("loginbutton").addEventListener("click", function () {
     password: password,
   };
 
-
+  
   // if(!username.includes("@") || password.length<6 || password.length>20)
   // {
   //   alert("Email ili Sifra nisu u dobrom formatu");
@@ -33,12 +35,20 @@ document.getElementById("loginbutton").addEventListener("click", function () {
   // }
   
   
-  if(!username.includes("@") || password.length<6 || password.length>20)
+  if(!username.includes("@") || !username.includes(".com"))
   {
-   alertbox=  setTimeout(function(){
-      document.getElementById("alertbox").style = "display:block";
-    },100)
+  document.getElementById("username").style= "border-bottom:1px solid red";
+  labelalert.style= "display:block;color:red"
   }
+
+  
+  if(password.length>20 || password.length<5 || password != loginData.password)
+  {
+  document.getElementById("password").style= "border-bottom:1px solid red";
+  labelalert.style= "display:block;color:red"
+  }
+
+
 
   alertbox = setTimeout(function(){
     document.getElementById("alertbox").style = "display:none";
