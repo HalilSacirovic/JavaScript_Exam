@@ -16,6 +16,10 @@ function deactivateSpinenr(){
 var labelalert = document.getElementById("labelalert");
 
 labelalert.style="display:none"
+
+
+
+
 alertbox = document.getElementById("alertbox");
 document.getElementById("loading").style = "display: none;"
 document.getElementById("loginbutton").addEventListener("click", function () {
@@ -35,18 +39,41 @@ document.getElementById("loginbutton").addEventListener("click", function () {
   // }
   
   
-  if(!username.includes("@") || !username.includes(".com"))
+labelalert.style="display:none"
+
+
+document.getElementById("username").style= "border-bottom: 2px solid #ddd7f0;";
+document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
+
+  if(username === loginData.email || password === loginData.password){
+    console.log("RADI")
+  }
+  else {
+    console.log("Ne radi")
+  }
+  if(!username.includes("@") && (password.length>20 || password.length<5 ))
   {
-  document.getElementById("username").style= "border-bottom:1px solid red";
-  labelalert.style= "display:block;color:red"
+    labelalert.textContent = "Invalid Username & Password"
+    document.getElementById("username").style= "border-bottom:2px solid red";
+    document.getElementById("password").style= "border-bottom:2px solid red";
+    labelalert.style= "display:block;color:red";
+    console.log("Treci uslov")
+  }
+  else if(password.length>20 || password.length<5 )
+  {
+    document.getElementById("password").style= "border-bottom:2px solid red";
+    labelalert.style= "display:block;color:red";
+    labelalert.textContent = "Invalid Password"
+    console.log("DRUGI uslov")
+  }
+  else if (!username.includes("@")  ){
+    document.getElementById("username").style= "border-bottom:2px solid red";
+    labelalert.style= "display:block;color:red"
+    labelalert.textContent = "Invalid Username"
+    console.log("Prvi uslov");
+    
   }
 
-  
-  if(password.length>20 || password.length<5 || password != loginData.password)
-  {
-  document.getElementById("password").style= "border-bottom:1px solid red";
-  labelalert.style= "display:block;color:red"
-  }
 
 
 
