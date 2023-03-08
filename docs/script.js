@@ -128,5 +128,14 @@ document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
           document.getElementById("alertbox").style = "display:none";
         },3000)
       }
-    });
+    }).catch(()=>{
+      deactivateSpinenr()
+        alertbox= 
+          document.getElementById("alertbox").style = "display:block";
+
+
+        alertbox = setTimeout(function(){
+          document.getElementById("alertbox").style = "display:none";
+        },3000)
+    })
 });
