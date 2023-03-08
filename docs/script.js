@@ -31,6 +31,19 @@ document.getElementById("loginbutton").addEventListener("click", function () {
     password: password,
   };
 
+
+
+  if(!username.includes("@") || password.length<6 || password.length>20)
+  {
+   alertbox=  setTimeout(function(){
+      document.getElementById("alertbox").style = "display:block";
+    },100)
+  }
+
+  alertbox = setTimeout(function(){
+    document.getElementById("alertbox").style = "display:none";
+  },3000)
+
   
   // if(!username.includes("@") || password.length<6 || password.length>20)
   // {
@@ -103,7 +116,7 @@ document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
         let megaIndex = urlParams.get("megaIndex");
         localStorage.setItem("auth_token", data.token);
         localStorage.setItem("userId", data.userId);
-        alert("Prijava uspesna!");
+        // alert("Prijava uspesna!");
         window.location.href = "pitanje.html?megaIndex=0";
       } else {
         deactivateSpinenr()
