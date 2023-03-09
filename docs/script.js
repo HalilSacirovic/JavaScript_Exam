@@ -90,6 +90,7 @@ document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
 
 
 
+
   alertbox = setTimeout(function(){
     document.getElementById("alertbox").style = "display:none";
   },3000)
@@ -127,6 +128,11 @@ document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
         alertbox = setTimeout(function(){
           document.getElementById("alertbox").style = "display:none";
         },3000)
+
+        // labelalert.textContent = "Invalid Username & Password"
+        // document.getElementById("username").style= "border-bottom:2px solid red";
+        // document.getElementById("password").style= "border-bottom:2px solid red";
+        // labelalert.style= "display:block;color:red";
       }
     }).catch(()=>{
       deactivateSpinenr()
@@ -137,5 +143,10 @@ document.getElementById("password").style= "border-bottom: 2px solid #ddd7f0;";
         alertbox = setTimeout(function(){
           document.getElementById("alertbox").style = "display:none";
         },3000)
+
+        // labelalert.textContent = "Invalid Username & Password"
+        // document.getElementById("username").style= "border-bottom:2px solid red";
+        // document.getElementById("password").style= "border-bottom:2px solid red";
+        // // labelalert.style= "display:block;color:red";
     })
 });
